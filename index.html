@@ -128,7 +128,7 @@
   }
 
   @media (max-width: 768px) {
-    .col-md-5 {
+    .col-md-5  {
 		-webkit-box-flex: 0;
         -ms-flex: 0 0 50%;
         flex: 0 0 50%;
@@ -139,12 +139,49 @@
 
 .stats-container {
       display: flex;
-      align-items: center;  /* Aligns items vertically in the center */
-      justify-content: space-around; /* Adds space between items */
-      flex-wrap: wrap; /* Allows wrapping to new lines on smaller screens */
+      flex-direction: column; /* Default to column layout */
+      align-items: center;
+      justify-content: center;
+      gap: 20px; /* Space between the two sections */
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+     
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
-    .stats-container img {
-      margin: 10px;
+
+    .stats-container h1 {
+      font-size: 1.5em;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .stats-item {
+      flex: 1;
+      width: 100%;
+      max-width: 600px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .stats-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    @media (min-width: 768px) {
+      .stats-container {
+        flex-direction: row; /* Switch to row layout on larger screens */
+        justify-content: space-between;
+      }
+      
+      .stats-item img {
+        max-width: 90%; /* Ensure images do not exceed their container's width */
+      }
     }
 
 
@@ -345,11 +382,11 @@
 					</div>
 				</div>
 				<div class="stats-container">
-					<div>
+					<div class="stats-item">
 					  <h1>📊 GitHub Stats:</h1>
 					  <img src="https://github-readme-streak-stats.herokuapp.com/?user=AyushiAnand70047&theme=dark&hide_border=true" alt="GitHub Streak Stats">
 					</div>
-					<div>
+					<div class="stats-item">
 					  <h1>🦾 Leetcode:</h1>
 					  <img src="https://leetcard.jacoblin.cool/ayushianand088?theme=dark&font=Rubik&ext=heatmap" alt="Leetcode Stats">
 					</div>
